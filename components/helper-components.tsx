@@ -14,17 +14,8 @@ export const Wrapper = (props: { children: React.ReactNode; data: object }) => {
         <title>Tina</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <div className="header">
-        <div className="container">
-          <Nav />
-        </div>
-      </div>
-      <div className="content">
-        <div className="container">
-          <div className="card">{props.children}</div>
-          <RawRenderer data={props.data} />
-        </div>
-      </div>
+      <div className="card">{props.children}</div>
+      <RawRenderer data={props.data} />
       <style global jsx>
         {GlobalStyles}
       </style>
@@ -62,15 +53,16 @@ export const GlobalStyles = css.global`
 
   body {
     margin: 0;
-    background: var(--mint-light);
+    // background: var(--mint-light);
+    padding: 0;
   }
 `;
 
 export const PageStyles = css`
   .container {
-    display: block;
-    max-width: 960px;
-    margin: 0 auto;
+    // display: block;
+    // max-width: 960px;
+    // margin: 0 auto;
   }
 
   .header {
@@ -173,17 +165,17 @@ const Nav = () => {
     <div className="nav">
       <h4>
         <Link href="/">
-        <a>Tina Cloud Starter</a>
+          <a>Tina Cloud Starter</a>
         </Link>
       </h4>
       <ul className="menu">
         <li>
           <Link href={`${prefix}/`}>
-           <a>Home</a>
+            <a>Home</a>
           </Link>
         </li>
         <li>
-          <Link  href={`${prefix}/posts/voteForPedro`}>
+          <Link href={`${prefix}/posts/voteForPedro`}>
             <a className="summary">
               Vote for Pedro
             </a>
