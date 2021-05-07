@@ -1,7 +1,7 @@
 ---
 blocks:
   - template: message
-    messageHeader: Barnyard Organics
+    messageHeader: Hello World
     messageBody: >
       The Tina Cloud project is an opinionated approach to working with the
       TinaCMS system that enables you to focus on building sites the way you're
