@@ -5,6 +5,7 @@ fields:
   - type: text
     label: Message Header
     name: messageHeader
+    default: asdf
   - type: textarea
     label: Message Body
     name: messageBody

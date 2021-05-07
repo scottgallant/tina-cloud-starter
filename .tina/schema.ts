@@ -87,6 +87,7 @@ export default defineSchema({
                       type: "text",
                       label: "Message Header",
                       name: "messageHeader",
+                      default: "asdf",
                     },
                     {
                       type: "textarea",
