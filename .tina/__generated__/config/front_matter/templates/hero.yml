@@ -1,0 +1,10 @@
+---
+name: hero
+label: Hero
+fields:
+  - type: text
+    label: Hero Header
+    name: heroHeader
+  - type: textarea
+    label: Sub Heading
+    name: heroSubHeading

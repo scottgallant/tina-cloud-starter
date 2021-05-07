@@ -42,6 +42,10 @@ export const query = (gql) => gql`
               messageHeader
               messageBody
             }
+            ... on Hero_Data {
+              heroHeader
+              heroSubHeading
+            }
             ... on Diagram_Data {
               diagramHeading
               diagramDescription

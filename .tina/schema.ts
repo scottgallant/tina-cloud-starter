@@ -64,6 +64,22 @@ export default defineSchema({
               label: "Blocks",
               templates: [
                 {
+                  name: "hero",
+                  label: "Hero",
+                  fields: [
+                    {
+                      type: "text",
+                      label: "Hero Header",
+                      name: "heroHeader",
+                    },
+                    {
+                      type: "textarea",
+                      label: "Sub Heading",
+                      name: "heroSubHeading",
+                    },
+                  ],
+                },
+                {
                   name: "message",
                   label: "Message",
                   fields: [

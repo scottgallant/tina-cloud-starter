@@ -296,6 +296,12 @@ export type MarketingPages_Document = Node & Document & {
   form?: Maybe<MarketingPages_Form>;
 };
 
+export type Hero_Data = {
+  __typename?: 'Hero_Data';
+  heroHeader?: Maybe<Scalars['String']>;
+  heroSubHeading?: Maybe<Scalars['String']>;
+};
+
 export type Message_Data = {
   __typename?: 'Message_Data';
   messageHeader?: Maybe<Scalars['String']>;
@@ -309,12 +315,19 @@ export type Diagram_Data = {
   diagramID?: Maybe<Scalars['String']>;
 };
 
-export type LandingPage_Blocks_Data = Message_Data | Diagram_Data;
+export type LandingPage_Blocks_Data = Hero_Data | Message_Data | Diagram_Data;
 
 export type LandingPage_Doc_Data = {
   __typename?: 'LandingPage_Doc_Data';
   blocks?: Maybe<Array<Maybe<LandingPage_Blocks_Data>>>;
   _body?: Maybe<Scalars['String']>;
+};
+
+export type Hero_Values = {
+  __typename?: 'Hero_Values';
+  heroHeader?: Maybe<Scalars['String']>;
+  heroSubHeading?: Maybe<Scalars['String']>;
+  _template?: Maybe<Scalars['String']>;
 };
 
 export type Message_Values = {
@@ -332,13 +345,22 @@ export type Diagram_Values = {
   _template?: Maybe<Scalars['String']>;
 };
 
-export type LandingPage_Blocks_Values = Message_Values | Diagram_Values;
+export type LandingPage_Blocks_Values = Hero_Values | Message_Values | Diagram_Values;
 
 export type LandingPage_Doc_Values = {
   __typename?: 'LandingPage_Doc_Values';
   blocks?: Maybe<Array<Maybe<LandingPage_Blocks_Values>>>;
   _body?: Maybe<Scalars['String']>;
   _template?: Maybe<Scalars['String']>;
+};
+
+export type Hero_FormFieldsUnion = TextField | TextareaField;
+
+export type Hero_Form = {
+  __typename?: 'Hero_Form';
+  label?: Maybe<Scalars['String']>;
+  name?: Maybe<Scalars['String']>;
+  fields?: Maybe<Array<Maybe<Hero_FormFieldsUnion>>>;
 };
 
 export type Message_FormFieldsUnion = TextField | TextareaField;
@@ -361,6 +383,7 @@ export type Diagram_Form = {
 
 export type LandingPage_Blocks_BlocksFieldTemplates = {
   __typename?: 'LandingPage_Blocks_BlocksFieldTemplates';
+  hero?: Maybe<Hero_Form>;
   message?: Maybe<Message_Form>;
   diagram?: Maybe<Diagram_Form>;
 };
@@ -382,6 +405,11 @@ export type LandingPage_Doc_Form = {
   fields?: Maybe<Array<Maybe<LandingPage_Doc_FormFieldsUnion>>>;
 };
 
+export type Hero_Input = {
+  heroHeader?: Maybe<Scalars['String']>;
+  heroSubHeading?: Maybe<Scalars['String']>;
+};
+
 export type Message_Input = {
   messageHeader?: Maybe<Scalars['String']>;
   messageBody?: Maybe<Scalars['String']>;
@@ -394,6 +422,7 @@ export type Diagram_Input = {
 };
 
 export type Blocks_Input = {
+  hero?: Maybe<Hero_Input>;
   message?: Maybe<Message_Input>;
   diagram?: Maybe<Diagram_Input>;
 };

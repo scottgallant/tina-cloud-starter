@@ -202,6 +202,11 @@ type MarketingPages_Document implements Node & Document {
   form: MarketingPages_Form
 }
 
+type Hero_Data {
+  heroHeader: String
+  heroSubHeading: String
+}
+
 type Message_Data {
   messageHeader: String
   messageBody: String
@@ -213,11 +218,17 @@ type Diagram_Data {
   diagramID: String
 }
 
-union LandingPage_Blocks_Data = Message_Data | Diagram_Data
+union LandingPage_Blocks_Data = Hero_Data | Message_Data | Diagram_Data
 
 type LandingPage_Doc_Data {
   blocks: [LandingPage_Blocks_Data]
   _body: String
+}
+
+type Hero_Values {
+  heroHeader: String
+  heroSubHeading: String
+  _template: String
 }
 
 type Message_Values {
@@ -233,12 +244,20 @@ type Diagram_Values {
   _template: String
 }
 
-union LandingPage_Blocks_Values = Message_Values | Diagram_Values
+union LandingPage_Blocks_Values = Hero_Values | Message_Values | Diagram_Values
 
 type LandingPage_Doc_Values {
   blocks: [LandingPage_Blocks_Values]
   _body: String
   _template: String
+}
+
+union Hero_FormFieldsUnion = TextField | TextareaField
+
+type Hero_Form {
+  label: String
+  name: String
+  fields: [Hero_FormFieldsUnion]
 }
 
 union Message_FormFieldsUnion = TextField | TextareaField
@@ -258,6 +277,7 @@ type Diagram_Form {
 }
 
 type LandingPage_Blocks_BlocksFieldTemplates {
+  hero: Hero_Form
   message: Message_Form
   diagram: Diagram_Form
 }
@@ -277,6 +297,11 @@ type LandingPage_Doc_Form {
   fields: [LandingPage_Doc_FormFieldsUnion]
 }
 
+input Hero_Input {
+  heroHeader: String
+  heroSubHeading: String
+}
+
 input Message_Input {
   messageHeader: String
   messageBody: String
@@ -289,6 +314,7 @@ input Diagram_Input {
 }
 
 input Blocks_Input {
+  hero: Hero_Input
   message: Message_Input
   diagram: Diagram_Input
 }
