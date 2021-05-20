@@ -1,7 +1,7 @@
 ---
 blocks:
   - template: hero
-    heroHeader: Hello Folks
+    heroHeader: Hello Folks!
     heroSubHeading: >-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper
       nulla non metus auctor fringilla.
